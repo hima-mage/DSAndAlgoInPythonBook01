@@ -1,0 +1,470 @@
+# Unlike Java and C++, Python is a dynamically typed language, as there is no
+advance declaration associating an identiﬁer with a particular data type.
+An identiﬁer can be associated with any type of object, and it can later be reassigned to
+another object of the same (or different) type.
+
+# A programmer can establish an alias by assigning a second identiﬁer to an
+existing object. Continuing with our earlier example, Figure 1.2 portrays the result
+of a subsequent assignment, original = temperature.
+
+# if one of the names is reassigned to a new value using
+a subsequent assignment statement, that does not affect the aliased object, rather it
+breaks the alias. Continuing with our concrete example, we consider the command:
+temperature = temperature + 5.0
+
+# The process of creating a new instance of a class is known as instantiation. In
+general, the syntax for instantiating an object is to invoke the constructor of a class.
+For example, if there were a class named Widget, we could create an instance of
+that class using a syntax such as w = Widget( ), assuming that the constructor does
+not require any parameters. If the constructor does require parameters, we might
+use a syntax such as Widget(a, b, c) to construct a new instance.
+
+# Python supports traditional functions (see Section 1.5) that are invoked with a syn-
+tax such as sorted(data), in which case data is a parameter sent to the function.
+Python’s classes may also deﬁne one or more methods (also known as member
+functions), which are invoked on a speciﬁc instance of a class using the dot (“.”)
+operator. For example, Python’s list class has a method named sort that can be
+invoked with a syntax such as data.sort( ). This particular method rearranges the
+contents of the list so that they are sorted.
+
+# When using a method of a class, it is important to understand its behavior.
+Some methods return information about the state of an object, but do not change
+that state. These are known as accessors. Other methods, such as the sort method
+of the list class, do change the state of an object. These methods are known as
+mutators or update methods.
+
+# A class is immutable if each object of that class has a ﬁxed value upon instantiation that
+cannot subsequently be changed. For example, the ﬂoat class is immutable. Once
+an instance has been created, its value cannot be changed
+
+# The bool class is used to manipulate logical (Boolean) values, and the only two
+instances of that class are expressed as the literals True and False.
+
+# Python allows the creation of a Boolean value
+from a nonboolean type using the syntax bool(foo) for value foo. The interpretation
+depends upon the type of the parameter. Numbers evaluate to False if zero, and
+True if nonzero. Sequences and other container types, such as strings and lists,
+evaluate to False if empty and True if nonempty.
+
+# The int and ﬂoat classes are the primary numeric types in Python. The int class is
+designed to represent integer values with arbitrary magnitude.
+
+# The integer constructor, int( ), returns value 0 by default. But this constructor
+can be used to construct an integer value based upon an existing value of another
+type. For example, if f represents a ﬂoating-point value, the syntax int(f) produces
+the truncated value of f. For example, both int(3.14) and int(3.99) produce the
+value 3
+
+# The constructor can also be used
+to parse a string that is presumed to represent an integral value (such as one entered by a user).
+If s represents a string, then int(s) produces the integral value
+that string represents. For example, the expression int( 137 ) produces the integer value 137.
+If an invalid string is given as a parameter, as in int( hello ), a
+ValueError is raised
+
+# The list, tuple, and str classes are sequence types in Python, representing a collection of values in which the order is signiﬁcant. The list class is the most general,
+representing a sequence of arbitrary objects (akin to an “array” in other languages).
+The tuple class is an immutable
+
+# A list instance stores a sequence of objects. A list is a referential structure, as it
+technically stores a sequence of references to its elements (see Figure 1.4). Elements of a list may be arbitrary objects (including the None object). Lists are
+array-based sequences and are zero-indexed, thus a list of length n has elements
+indexed from 0 to n − 1 inclusive
+
+# Python uses the characters [ ] as delimiters for a list literal, with [ ] itself being
+an empty list.
+
+# The tuple class provides an immutable version of a sequence ()  , (17,) is a one-element tuple. The reason for
+this requirement is that, without the trailing comma, the expression (17) is viewed
+as a simple parenthesized numeric expression
+
+# Python’s str class is speciﬁcally designed to efﬁciently represent an immutable
+sequence of characters, String literals can be enclosed in single quotes, as in hello , or double
+quotes, as in "hello".
+the quote delimiter can be designated using a
+backslash as a so-called escape character, as in Don\ t worry .
+the backslash must itself be escaped to occur as a natural character of the string literal, as in C:\\Python\\ ,
+
+# Python also supports using the delimiter
+literal. The advantage of such triple-quoted strings is that newline characters can
+be embedded naturally
+
+# Python’s set class represents the mathematical notion of a set, namely a collection
+of elements, without duplicates, and without an inherent order to those elements.
+The major advantage of using a set, as opposed to a list, is that it has a highly
+optimized method for checking whether a speciﬁc element is contained in the set.
+This is based on a data structure known as a hash table {}
+
+# Python uses curly braces { and } as delimiters for a set, for example, as {17}
+or { red , green , blue }. The exception to this rule is that { } does not
+represent an empty set; for historical reasons, it represents an empty dictionary
+
+# there are two important restrictions due to the
+algorithmic underpinnings. The ﬁrst is that the set does not maintain the elements
+in any particular order. The second is that only instances of immutable types can be
+added to a Python set.
+
+# Python’s dict class represents a dictionary, or mapping, from a set of distinct keys
+to associated values. For example, a dictionary might map from unique student ID
+numbers, to larger student records (such as the student’s name, address, and course
+grades). Python implements a dict using an almost identical approach to that of a
+set, but with storage of the associated values.
+
+# A dictionary literal also uses curly braces, and because dictionaries were introduced in Python prior to sets, the literal form { } produces an empty dictionary.
+
+# Logical Operators :
+    not unary negation
+    and conditional and
+    or conditional or
+
+
+
+# Equality Operators
+    is same identity
+    is not different identity
+    == equivalent
+    != not equivalent
+
+# Comparison Operators
+    < less than
+    <= less than or equal to
+    > greater than
+    >= greater than or equal to
+
+# Arithmetic Operators
+    + addition
+    − subtraction
+    * multiplication
+    / true division
+    // integer division
+    % the modulo operator
+
+# Bitwise Operators
+    ∼ bitwise complement (preﬁx unary operator)
+    & bitwise and
+    |bitwise or
+    ˆ bitwise exclusive-or
+    << shift bits left, ﬁlling in with zeros
+    >> shift bits right, ﬁlling in with sign bit
+
+# Sequence Operators : Each of Python’s built-in sequence types (str, tuple, and list) support the following
+operator syntaxes:
+    s[j]                element at index j
+    s[start:stop]       slice including indices [start,stop)
+    s[start:stop:step]  slice including indices start, start + step,
+                            start + 2 step, . . . , up to but not equalling or stop
+    s+t                 concatenation of sequences
+    k*s shorthand for s + s + s + ... (k times)
+
+    val in s containment check
+    val not in s  non-containment check
+
+# Operators for Sets and Dictionaries :
+    key in s containment check
+    key not in s non-containment check
+    s1 == s2 s1 is equivalent to s2
+    s1 != s2 s1 is not equivalent to s2
+    s1 <= s2 s1 is subset of s2
+    s1 < s2 s1 is proper subset of s2
+    s1 >= s2 s1 is superset of s2
+    s1 > s2 s1 is proper superset of s2
+    s1 | s2 the union of s1 and s2
+    s1 & s2 the intersection of s1 and s2
+    s1 − s2 the set of elements in s1 but not s2
+    s1 ˆ s2 the set of elements in precisely one of s1 or s2
+
+# Extended Assignment Operators
+alpha = [1, 2, 3]
+beta = alpha
+beta += [4, 5]
+beta = beta + [6, 7]
+print(alpha)
+
+# a body is more typically typeset as an
+indented block starting on the line following the colon. Python relies on the indentation level to designate the extent of that block of code,
+
+
+# Conditionals
+
+if ﬁrst condition:
+ﬁrst body
+elif second condition:
+second body
+elif third condition:
+third body
+else:
+fourth body
+
+# While Loops
+    The syntax for a while loop in Python is as follows:
+    while condition:
+        body
+
+# For Loops
+    for element in iterable:
+        body # body may refer to element as an identiﬁer
+
+    index based
+        for j in range(len(data)):
+
+# Break and Continue Statements
+Python supports a break statement that immediately terminate a while or for loop
+when executed within its body.
+Python also supports a continue statement that causes the current iteration of a
+loop body to stop
+
+
+# Functions
+    def count(data, target):
+
+
+# each time a function is called,
+Python creates a dedicated activation record that stores information relevant to the
+current call. This activation record includes what is known as a namespace ,
+to manage all identiﬁers that have local scope within the current call.
+The namespace includes the function’s parameters and any other identiﬁers that are
+deﬁned locally within the body of the function.
+
+#  Information Passing
+In the context of a function signature, the identiﬁers used to describe the
+expected parameters are known as formal parameters, and the objects sent by the
+caller when invoking the function are the actual parameters. Parameter passing
+in Python follows the semantics of the standard assignment statement. When a
+function is invoked, each identiﬁer that serves as a formal parameter is assigned, in
+the function’s local scope, to the respective actual parameter that is provided by the
+caller of the function.
+
+# Mutable Parameters
+Python’s parameter passing model has additional implications when a parameter is
+a mutable object. Because the formal parameter is an alias for the actual parameter,
+the body of the function may interact with the object in ways that change its state.
+Considering again our sample invocation of the count function, if the body of the
+function executes the command data.append( F ), the new entry is added to the
+end of the list identiﬁed as data within the function, which is one and the same as
+the list known to the caller as grades. As an aside, we note that reassigning a new
+value to a formal parameter with a function body, such as by setting data = [ ],
+does not alter the actual parameter; such a reassignment simply breaks the alias.
+
+# Default Parameter Values
+Such a function is said to be polymorphic
+def foo(a, b=15, c=27):
+
+
+# Keyword Parameters
+The traditional mechanism for matching the actual parameters sent by a caller, to
+the formal parameters declared by the function signature is based on the concept
+of positional arguments.
+For example, with signature foo(a=10, b=20, c=30),
+parameters sent by the caller are matched, in the given order, to the formal param-
+eters. An invocation of foo(5) indicates that a=5, while b and c are assigned their
+default values.
+Python supports an alternate mechanism for sending a parameter to a function
+known as a keyword argument. A keyword argument is speciﬁed by explicitly
+assigning an actual parameter to a formal parameter by name. For example, with
+the above deﬁnition of function foo, a call foo(c=5) will invoke the function with
+parameters a=10, b=20, c=5.
+
+# The print Function
+The built-in function, print, is used to generate standard output to the console.
+it prints an arbitrary sequence of arguments, separated by
+print( maroon , 5)
+
+# The input Function
+The primary means for acquiring information from the user console is a built-in
+function named input.
+
+reply = input( Enter x and y, separated by spaces: )
+pieces = reply.split( ) # returns a list of strings, as separated by spaces
+
+age = int(input( Enter your age in years: ))
+max heart rate = 206.9 − (0.67 age) # as per Med Sci Sports Exerc.
+target = 0.65 max heart rate
+print( Your target fat-burning heart rate is , target)
+
+# Files
+Files are typically accessed in Python beginning with a call to a built-in function,
+named open, that returns a proxy for interactions with the underlying ﬁle. For
+example, the command, fp = open( sample.txt ), attempts to open a ﬁle named
+sample.txt, returning a proxy that allows read-only access to the text ﬁle.
+The open function accepts an optional second parameter that determines the
+access mode.
+
+# Reading from a File
+fp.read( ) returns the remaining contents of the ﬁle in entirety.
+
+# Writing to a File
+fp.write( Hello World.\n )
+
+# Exception Handling
+Exceptions are unexpected events that occur during the execution of a program.
+An exception might result from a logical error or an unanticipated situation. In
+Python, exceptions (also known as errors) are objects that are raised (or thrown) by
+code that encounters an unexpected circumstance
+
+# The Python interpreter can also
+raise an exception should it encounter an unexpected condition, like running out of
+memory. A raised error may be caught by a surrounding context that “handles” the
+exception in an appropriate fashion. If uncaught, an exception causes the interpreter
+to stop executing the program and to report an appropriate message to the console.
+
+# Raising an Exception
+An exception is thrown by executing the raise statement, with an appropriate in-
+stance of an exception class as an argument that designates the problem. For exam-
+ple, if a function for computing a square root is sent a negative value as a parameter,
+it can raise an exception with the command:
+raise ValueError( x cannot be negative )
+
+# Catching an Exception
+One philosophy for managing exceptional cases is to “look before you leap.” using if
+
+A second philosophy, often embraced by Python programmers, is that “it is
+easier to ask for forgiveness than it is to get permission.” a try-except control structure
+
+# Iterators and Generators
+for element in iterable:
+a ﬁle can produce an iteration of its lines.
+
+# An iterator is an object that manages an iteration through a series of values. If
+variable, i, identiﬁes an iterator object, then each call to the built-in function,
+next(i), produces a subsequent element from the underlying series, with a
+StopIteration exception raised to indicate that there are no further elements.
+
+# • An iterable is an object, obj, that produces an iterator via the syntax iter(obj).
+
+# the call range(1000000) does not return a list of numbers; it
+returns a range object that is iterable. This object generates the million values one
+at a time, and only as needed. Such a lazy evaluation technique has great advan-
+tage. In the case of range, it allows a loop of the form, for j in range(1000000):,
+to execute without setting aside memory for storing one million values. Also, if
+such a loop were to be interrupted in some fashion, no time will have been spent
+computing unused values of the range.
+
+# Generators
+the most convenient technique for creating iterators in Python
+is through the use of generators.
+In contrast, an implementation of a generator for computing those factors could be
+A generator is implemented with a syntax that
+is very similar to a function, but instead of returning values, a yield statement is
+executed to indicate each element of the series
+
+implemented as follows:
+    def factors(n):
+    for k in range(1,n+1):
+        if n % k == 0:
+            yield k
+
+Notice use of the keyword yield rather than return to indicate a result. This indi-
+cates to Python that we are deﬁning a generator, rather than a traditional function. It
+is illegal to combine yield and return statements in the same implementation,
+
+# Conditional Expressions
+expr1 if condition else expr2
+param = n if n >= 0 else −n
+with Java or C++, this is equivalent to the
+syntax, condition ? expr1 : expr2,
+
+# Comprehension Syntax
+A very common programming task is to produce one series of values based upon
+the processing of another series. Often, this task can be accomplished quite simply
+in Python using what is known as a comprehension syntax.
+[ expression for value in iterable if condition ]
+
+# Packing and Unpacking of Sequences
+Python provides two additional conveniences involving the treatment of tuples and
+other sequence types. The ﬁrst is rather cosmetic. If a series of comma-separated
+expressions are given in a larger context, they will be treated as a single tuple, even
+if no enclosing parentheses are provided. For example, the assignment
+    data = 2, 4, 6, 8
+results in identiﬁer, data, being assigned to the tuple (2, 4, 6, 8). This behavior
+is called automatic packing of a tuple. One common use of packing in Python is
+when returning multiple values from a function. If the body of a function executes
+the command,
+    return x, y
+it will be formally returning a single object that is the tuple (x, y).
+
+As a dual to the packing behavior, Python can automatically unpack a se-
+quence, allowing one to assign a series of individual identiﬁers to the elements
+of sequence. As an example, we can write
+    a, b, c, d = range(7, 11)
+
+# Simultaneous Assignments
+The combination of automatic packing and unpacking forms a technique known
+as simultaneous assignment, whereby we explicitly assign a series of values to a
+series of identiﬁers, using a syntax:
+x, y, z = 6, 2, 5
+
+# Scopes and Namespaces
+When computing a sum with the syntax x + y in Python, the names x and y must
+have been previously associated with objects that serve as values; a NameError
+will be raised if no such deﬁnitions are found. The process of determining the
+value associated with an identiﬁer is known as name resolution.
+
+Whenever an identiﬁer is assigned to a value, that deﬁnition is made with a
+speciﬁc scope. Top-level assignments are typically made in what is known as global
+scope. Assignments made within the body of a function typically have scope that is
+local to that function call. Therefore, an assignment, x = 5, within a function has
+no effect on the identiﬁer, x, in the broader scope.
+
+Each distinct scope in Python is represented using an abstraction known as a
+namespace.
+
+Python implements a namespace with its own dictionary that maps each iden-
+tifying string (e.g., n ) to its associated value. Python provides several ways to
+examine a given namespace. The function, dir, reports the names of the identiﬁers
+in a given namespace (i.e., the keys of the dictionary), while the function, vars,
+returns the full dictionary. By default, calls to dir( ) and vars( ) report on the most
+locally enclosing namespace in which they are executed.
+
+# First-Class Objects
+In the terminology of programming languages, ﬁrst-class objects are instances of
+a type that can be assigned to an identiﬁer, passed as a parameter, or returned by
+a function. All of the data types we introduced in Section 1.2.3, such as int and
+list, are clearly ﬁrst-class types in Python. In Python, functions and classes are also
+treated as ﬁrst-class objects. For example, we could write the following:
+    scream = print # assign name ’scream’ to the function denoted as ’print’
+    scream( Hello ) # call that function
+
+# Modules and the Import Statement
+Beyond the built-in deﬁnitions, the standard Python distribution includes per-
+haps tens of thousands of other values, functions, and classes that are organized in
+additional libraries, known as modules, that can be imported from within a pro-
+gram. As an example, we consider the math module. While the built-in namespace
+includes a few mathematical functions (e.g., abs, min, max, round), many more
+are relegated to the math module (e.g., sin, cos, sqrt). That module also deﬁnes
+approximate values for the mathematical constants, pi and e.
+Python’s import statement loads deﬁnitions from a module into the current
+namespace. One form of an import statement uses a syntax such as the following:
+    from math import pi, sqrt
+    import math.
+
+# Creating a New Module
+To create a new module, one simply has to put the relevant deﬁnitions in a ﬁle
+named with a .py sufﬁx.
+Those deﬁnitions can be imported from any other .py
+ﬁle within the same project directory
+For example, if we were to put the deﬁnition
+of our count function (see Section 1.5) into a ﬁle named utility.py, we could
+import that function using the syntax, from utility import count.
+
+It is worth noting that top-level commands with the module source code are
+executed when the module is ﬁrst imported, almost as if the module were its own
+script. There is a special construct for embedding commands within the module
+that will be executed if the module is directly invoked as a script, but not when
+the module is imported from another script. Such commands should be placed in a
+body of a conditional statement of the following form,
+    if __name__ == '__main__' :
+
+
+# Existing Modules
+
+# Pseudo-Random Number Generation
+Python uses a more advanced
+technique known as a Mersenne twister. It turns out that the sequences generated
+by these techniques can be proven to be statistically uniform,
+
+from outer space.
+Since the next number in a pseudo-random generator is determined by the pre-
+vious number(s), such a generator always needs a place to start, which is called its
+seed.
+
+#
