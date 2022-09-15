@@ -1,0 +1,97 @@
+# Algorithm Analysis
+
+    - we are interested in the design of “good” data structures and algo-
+        rithms. Simply put, a data structure is a systematic way of organizing and access-
+        ing data, and an algorithm is a step-by-step procedure for performing some task in
+        a ﬁnite amount of time.
+
+# 1 Experimental Studies :
+    - Challenges of Experimental Analysis :
+        - Experimental running times of two algorithms are difﬁcult to directly com-
+            pare unless the experiments are performed in the same hardware and software
+            environments.
+        - Experiments can be done only on a limited set of test inputs; hence, they
+            leave out the running times of inputs not included in the experiment
+- Moving Beyond Experimental Analysis :
+    - Our goal is to develop an approach to analyzing the efﬁciency of algorithms that:
+        1. Allows us to evaluate the relative efﬁciency of any two algorithms in a way
+        that is independent of the hardware and software environment.
+        2. Is performed by studying a high-level description of the algorithm without
+        need for implementation.
+        3. Takes into account all possible inputs.
+
+    - Counting Primitive Operations :
+        - We deﬁne a set of primitive operations such as the following:
+            • Assigning an identiﬁer to an object
+            • Determining the object associated with an identiﬁer
+            • Performing an arithmetic operation (for example, adding two numbers)
+            • Comparing two numbers
+            • Accessing a single element of a Python list by index
+            • Calling a function (excluding operations executed within the function)
+            • Returning from a function
+
+# Measuring Operations as a Function of Input Size :
+    -To capture the order of growth of an algorithm’s running time, we will associate,
+        with each algorithm, a function f (n) that characterizes the number of primitive
+        operations that are performed as a function of the input size n
+
+# Focusing on the Worst-Case Input :
+    - An algorithm may run faster on some inputs than it does on others of the same size.
+    - we may wish to express the running time of an algorithm as the function of
+        the input size obtained by taking the average over all possible inputs of the same
+        size. Unfortunately, such an average-case analysis is typically quite challenging.
+        It requires us to deﬁne a probability distribution on the set of inputs,
+    -
+
+
+# 2 The Seven Functions Used in This Book :
+
+    1.The Constant Function f (n) = c, for some ﬁxed constant c
+    2.The Logarithm Function f (n) = log b n , a common operation in many
+        algorithms is to repeatedly divide an input in half
+    3.The Linear Function f (n) = n ,
+        - For example, comparing a number x to each
+            element of a sequence of size n will require n comparisons. The linear function
+            also represents the best running time we can hope to achieve for any algorithm that
+            processes each of n objects that are not already in the computer’s memory, because
+            reading in the n objects already requires n operations.
+    4.The N-Log-N Function f (n) = n log n,
+        - This function grows a little more rapidly than the linear function and
+            a lot less rapidly than the quadratic function; therefore, we would greatly prefer an
+            algorithm with a running time that is proportional to n log n, than one with quadratic
+            running time. We will see several important algorithms that exhibit a running time
+            proportional to the n-log-n function. For example, the fastest possible algorithms
+            for sorting n arbitrary values require time proportional to n log n.
+    5.The Quadratic Function f (n) = n 2 ,
+        - The main reason why the quadratic function appears in the analysis of algo-
+            rithms is that there are many algorithms that have nested loops, where the inner
+            loop performs a linear number of operations and the outer loop is performed a
+            linear number of times. Thus, in such cases, the algorithm performs n · n = n 2
+            operations.
+    6.The Cubic Function and Other Polynomials f (n) = n 3 ,
+        - Polynomials
+            Most of the functions we have listed so far can each be viewed as being part of a
+            larger class of functions, the polynomials. A polynomial function has the form,
+            f (n) = a 0 + a 1 n + a 2 n 2 + a 3 n 3 + · · · + a d n d
+
+        - Summations
+    7.The Exponential Function f (n) = b n , where b is a positive constant, called the base, and the argument n is the exponent.
+        -
+
+
+
+    - Comparing Growth Rates
+    - the analysis of an algorithm may sometimes involve the use of the ﬂoor function and ceiling function,
+    -
+
+
+
+# 3 Asymptotic Analysis :
+    - In algorithm analysis, we focus on the growth rate of the running time as a function
+        of the input size n, taking a “big-picture” approach. For example, it is often enough
+        just to know that the running time of an algorithm grows proportionally to n.
+
+    - The “Big-Oh” Notation
+        - The big-Oh notation allows us to ignore constant factors and lower-order terms and
+            focus on the main components of a function that affect its growth.
+        -
